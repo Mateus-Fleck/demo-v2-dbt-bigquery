@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: inscritos
+    description: "Table with Names and Age of inscribles"
+    columns:
+      - name: Name
+        description: "Name of inscrible"
+        tests:
+          - unique
+
+  - name: stage_inscritos
+    description: "A starter, stage data tranform dbt model"
+    columns:
+      - name: maiority
+        description: "Stage for transformation (TRUE = Age>18)"
+        tests:
+          - not_null
+
+  - name: analytics_inscritos
+    description: "Group of registrants over 18 years old"
+    columns:
+      - name: maiority
+        description: "TRUE = Age>18"
+        tests:
+          - accepted_values: [True, False]
+          - not_null
+          - relationships:
+              to: inscritos.Name
