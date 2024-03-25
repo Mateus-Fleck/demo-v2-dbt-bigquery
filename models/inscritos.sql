@@ -1,0 +1,1 @@
+SELECT * FROM `intense-age-418317.demo_v2_dbt_bigquery.inscritos`
