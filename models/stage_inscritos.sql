@@ -4,5 +4,5 @@ with inscritos as (
 
 select
     *,
-    Age >= 18 majority
+    Age >= 18 maiority
 from demo_v2_dbt_bigquery.inscritos
